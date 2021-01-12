@@ -7,7 +7,8 @@ const strings = {
   back: 'Back',
   question: 'Question',
 
-  results: 'Results'
+  results: 'Results',
+  export_to_image: 'Export to image'
 };
 
 export default strings;
