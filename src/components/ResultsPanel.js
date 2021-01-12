@@ -13,7 +13,6 @@ function ResultsPanel(props) {
 
   const exportToImage = () => {
     const element = document.querySelector("#canvas-target");
-    console.log(element);
 
     html2canvas(element, {
       width: element.scrollWidth+16, // Add small margin

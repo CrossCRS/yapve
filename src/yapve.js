@@ -39,8 +39,6 @@ function YAPVE() {
 
     setScores(scores);
   }, []);
-  console.log(politics.axes);
-  console.log(curScores);
 
   const prevQuestion = () => {
     if (curQuestionIndex > 0) {
@@ -58,7 +56,6 @@ function YAPVE() {
       updatedScores[effect.axis].value -= effect.value * multiplier;
     })
     setScores(updatedScores);
-    console.log(curScores);
 
     if (curQuestionIndex < questions_count - 1) {
       setQuestionIndex(curQuestionIndex + 1);
