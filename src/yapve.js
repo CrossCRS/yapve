@@ -10,6 +10,7 @@ import questions from './data/questions.js';
 import WelcomePanel from './components/WelcomePanel';
 import QuestionPanel from './components/QuestionPanel';
 import ResultsPanel from './components/ResultsPanel';
+import PoweredByLabel from './components/PoweredByLabel';
 
 function YAPVE() {
   const [curQuestionIndex, setQuestionIndex] = useState(-1);
@@ -92,7 +93,7 @@ function YAPVE() {
             <WelcomePanel questionsCount={questions_count} onStart={onStart} />
         }
         </Segment>
-        <Header as='h5' className={styles.poweredby} textAlign='center' disabled>Powered by <a href='https://github.com/CrossCRS/yapve'>YAPVE</a></Header>
+        <PoweredByLabel />
       </Container>
     </div>
   );

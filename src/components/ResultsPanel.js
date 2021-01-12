@@ -7,6 +7,8 @@ import politics from '../data/politics.js';
 import strings from '../data/strings.js';
 import config from '../data/config.js';
 
+import PoweredByLabel from './PoweredByLabel';
+
 function ResultsPanel(props) {
 
   const exportToImage = () => {
@@ -30,7 +32,8 @@ function ResultsPanel(props) {
         <AxisBar value={props.scores[axis].value} maxValue={props.scores[axis].max_value} axisData={politics.axes.filter(a => a.name === axis)[0]} />
       ))}
 
-      <Header as='h5' textAlign='right' style={{margin: 0}} disabled>{config.name}</Header>
+      <PoweredByLabel float='left' margin='0' />
+      <Header as='h5' style={{margin: 0, float: 'right' }} disabled>{config.name}</Header>
       <Button onClick={exportToImage} data-html2canvas-ignore>{strings.export_to_image}</Button>
     </Container>
   )
