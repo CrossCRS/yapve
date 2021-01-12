@@ -1,0 +1,14 @@
+.header {
+    margin-top: 1em !important;
+    margin-bottom: 1em !important;
+    font-size: 3em !important;
+}
+
+.poweredby {
+    text-transform: uppercase;
+    font-weight: 300 !important;
+}
+.poweredby a {
+    color: unset;
+    font-weight: 700 !important;
+}

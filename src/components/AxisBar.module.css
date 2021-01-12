@@ -1,0 +1,26 @@
+.value_left {
+    position: absolute;
+    top: 50%;
+    left: .5em;
+    margin-top: -.5em;
+    font-weight: 700;
+}
+
+.value_right {
+    position: absolute;
+    top: 50%;
+    right: .5em;
+    margin-top: -.5em;
+    font-weight: 700;
+}
+
+.bar {
+    border-right: 6px solid #ffffff !important;
+    border-radius: 0.3em !important;
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+}
+
+.bar_background {
+    border-radius: 0.3em !important;
+}
