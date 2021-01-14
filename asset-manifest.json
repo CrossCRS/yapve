@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/yapve/static/css/main.261643e7.chunk.css",
-    "main.js": "/yapve/static/js/main.f6faec24.chunk.js",
-    "main.js.map": "/yapve/static/js/main.f6faec24.chunk.js.map",
+    "main.css": "/yapve/static/css/main.b7596689.chunk.css",
+    "main.js": "/yapve/static/js/main.756b90de.chunk.js",
+    "main.js.map": "/yapve/static/js/main.756b90de.chunk.js.map",
     "runtime-main.js": "/yapve/static/js/runtime-main.442f3493.js",
     "runtime-main.js.map": "/yapve/static/js/runtime-main.442f3493.js.map",
     "static/css/2.2abf02ba.chunk.css": "/yapve/static/css/2.2abf02ba.chunk.css",
-    "static/js/2.5651a26d.chunk.js": "/yapve/static/js/2.5651a26d.chunk.js",
-    "static/js/2.5651a26d.chunk.js.map": "/yapve/static/js/2.5651a26d.chunk.js.map",
+    "static/js/2.417442a8.chunk.js": "/yapve/static/js/2.417442a8.chunk.js",
+    "static/js/2.417442a8.chunk.js.map": "/yapve/static/js/2.417442a8.chunk.js.map",
     "index.html": "/yapve/index.html",
     "static/css/2.2abf02ba.chunk.css.map": "/yapve/static/css/2.2abf02ba.chunk.css.map",
-    "static/css/main.261643e7.chunk.css.map": "/yapve/static/css/main.261643e7.chunk.css.map",
-    "static/js/2.5651a26d.chunk.js.LICENSE.txt": "/yapve/static/js/2.5651a26d.chunk.js.LICENSE.txt",
+    "static/css/main.b7596689.chunk.css.map": "/yapve/static/css/main.b7596689.chunk.css.map",
+    "static/js/2.417442a8.chunk.js.LICENSE.txt": "/yapve/static/js/2.417442a8.chunk.js.LICENSE.txt",
     "static/media/semantic.min.css": "/yapve/static/media/outline-icons.ddae9b1b.woff"
   },
   "entrypoints": [
     "static/js/runtime-main.442f3493.js",
     "static/css/2.2abf02ba.chunk.css",
-    "static/js/2.5651a26d.chunk.js",
-    "static/css/main.261643e7.chunk.css",
-    "static/js/main.f6faec24.chunk.js"
+    "static/js/2.417442a8.chunk.js",
+    "static/css/main.b7596689.chunk.css",
+    "static/js/main.756b90de.chunk.js"
   ]
 }
