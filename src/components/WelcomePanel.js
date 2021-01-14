@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from 'semantic-ui-react'
+import { Button } from 'semantic-ui-react';
 import config from '../data/config.js';
 
 function WelcomePanel(props) {
@@ -7,7 +7,7 @@ function WelcomePanel(props) {
 
   return (
     <div>
-      <p dangerouslySetInnerHTML={{ __html: description }} />
+      <p dangerouslySetInnerHTML={{__html: description}} />
       <Button fluid primary onClick={props.onStart}>Start</Button>
     </div>
   )

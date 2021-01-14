@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react'
-import { Container, Header, Segment, Label } from 'semantic-ui-react'
+import React, { useState, useEffect } from 'react';
+import { Container, Header, Segment, Label } from 'semantic-ui-react';
 import styles from './yapve.module.css';
 import config from './data/config.js';
 import strings from './data/strings.js';
@@ -13,13 +13,18 @@ import ResultsPanel from './components/ResultsPanel';
 import PoweredByLabel from './components/PoweredByLabel';
 
 function YAPVE() {
+  const PANELS = {
+    WELCOME_PANEL: 0,
+    QUESTION_PANEL: 1,
+    RESULTS_PANEL: 2
+  }
+
   const [curQuestionIndex, setQuestionIndex] = useState(-1);
-  const [curPanel, setPanel] = useState(0); // 0 - WelcomePanel, 1 - QuestionPanel, 2 - ResultsPanel
-
-  //const [lastMultiplier, setLastMultiplier] = useState(0);
+  const [curPanel, setPanel] = useState(PANELS.WELCOME_PANEL);
   const [curScores, setScores] = useState({});
+  //const [lastMultiplier, setLastMultiplier] = useState(0);
 
-  const questions_count = questions.length;
+  const QUESTIONS_COUNT = questions.length;
 
   useEffect(() => {
     let scores = {};
@@ -57,19 +62,19 @@ function YAPVE() {
     })
     setScores(updatedScores);
 
-    if (curQuestionIndex < questions_count - 1) {
+    if (curQuestionIndex < QUESTIONS_COUNT - 1) {
       setQuestionIndex(curQuestionIndex + 1);
     } else {
       showResults();
     }
   }
   const showResults = () => {
-    setPanel(2);
+    setPanel(PANELS.RESULTS_PANEL);
   }
 
   const onStart = () => {
     setQuestionIndex(0);
-    setPanel(1);
+    setPanel(PANELS.QUESTION_PANEL);
   }
 
   return (
@@ -78,18 +83,26 @@ function YAPVE() {
 
       <Container text>
         <Segment>
-        { curPanel === 1 ? <Label as='p' color='blue' ribbon>{strings.question} {curQuestionIndex+1} / {questions_count}</Label> : '' }
+        { curPanel === PANELS.QUESTION_PANEL ? <Label as='p' color='blue' ribbon>{strings.question} {curQuestionIndex+1} / {QUESTIONS_COUNT}</Label> : undefined }
+
         {
-          curPanel === 0 ?
-            <WelcomePanel questionsCount={questions_count} onStart={onStart} />
-          : curPanel === 1 ?
-            <QuestionPanel question={questions[curQuestionIndex]} questionIndex={curQuestionIndex} questionsCount={questions_count} onBack={prevQuestion} onSendAnswer={nextQuestion} />
-          : curPanel === 2 ?
+          curPanel === PANELS.WELCOME_PANEL ?
+            <WelcomePanel questionsCount={QUESTIONS_COUNT} onStart={onStart} />
+          : curPanel === PANELS.QUESTION_PANEL ?
+            <QuestionPanel
+              question={questions[curQuestionIndex]}
+              questionIndex={curQuestionIndex}
+              questionsCount={QUESTIONS_COUNT}
+              onBack={prevQuestion}
+              onSendAnswer={nextQuestion}
+            />
+          : curPanel === PANELS.RESULTS_PANEL ?
             <ResultsPanel scores={curScores} />
           :
-            <WelcomePanel questionsCount={questions_count} onStart={onStart} />
+            <WelcomePanel questionsCount={QUESTIONS_COUNT} onStart={onStart} />
         }
         </Segment>
+
         <PoweredByLabel />
       </Container>
     </div>
