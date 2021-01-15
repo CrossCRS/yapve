@@ -14,10 +14,11 @@ function QuestionPanel(props) {
       <Button color='orange' size='large' fluid onClick={() => props.onSendAnswer(-0.5)}>{strings.disagree}</Button>
       <Button color='red' size='large' fluid onClick={() => props.onSendAnswer(-1.0)}>{strings.strongly_disagree}</Button>
 
-      { //props.questionIndex !== 0 ?
-        //<Button className={styles.button_back} fluid basic onClick={props.onBack}>{strings.back}</Button>
-        //:
-        //<Button className={styles.button_back} fluid basic disabled>{strings.back}</Button>
+      { 
+        props.questionIndex !== 0 ?
+          <Button className={styles.button_back} fluid basic onClick={props.onBack}>{strings.back}</Button>
+        :
+          <Button className={styles.button_back} fluid basic disabled>{strings.back}</Button>
       }
     </Container>
   )

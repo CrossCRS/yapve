@@ -22,7 +22,7 @@ function YAPVE() {
   const [curQuestionIndex, setQuestionIndex] = useState(-1);
   const [curPanel, setPanel] = useState(PANELS.WELCOME_PANEL);
   const [curScores, setScores] = useState({});
-  //const [lastMultiplier, setLastMultiplier] = useState(0);
+  const [scoreHistory, setScoreHistory] = useState([]);
 
   const QUESTIONS_COUNT = questions.length;
 
@@ -45,22 +45,39 @@ function YAPVE() {
     setScores(scores);
   }, []);
 
+  const addToScoreHistory = (scoreUpdate) => {
+    setScoreHistory([...scoreHistory, scoreUpdate]);
+  }
+  const popScoreHistory = () => {
+    const _scoreHistory = [...scoreHistory];
+    const score = _scoreHistory.pop();
+    setScoreHistory(_scoreHistory);
+    return score;
+  }
+
   const prevQuestion = () => {
     if (curQuestionIndex > 0) {
-      // TODO: Revert score
+      const scoreUpdate = popScoreHistory();
 
+      const updatedScores = curScores;
+      scoreUpdate.forEach((effect) => {
+        updatedScores[effect.axis].value += effect.value;
+      })
+
+      setScores(updatedScores);
       setQuestionIndex(curQuestionIndex - 1);
     }
   }
   const nextQuestion = (multiplier) => {
-    //setLastMultiplier(multiplier);
-
     // Update scores
     const updatedScores = curScores;
+    const scoreUpdate = [];
     questions[curQuestionIndex].effects.forEach((effect) => {
       updatedScores[effect.axis].value -= effect.value * multiplier;
+      scoreUpdate.push({axis: effect.axis, value: effect.value * multiplier});
     })
     setScores(updatedScores);
+    addToScoreHistory(scoreUpdate);
 
     if (curQuestionIndex < QUESTIONS_COUNT - 1) {
       setQuestionIndex(curQuestionIndex + 1);
@@ -83,7 +100,7 @@ function YAPVE() {
 
       <Container text>
         <Segment>
-        { curPanel === PANELS.QUESTION_PANEL ? <Label as='p' color='blue' ribbon>{strings.question} {curQuestionIndex+1} / {QUESTIONS_COUNT}</Label> : undefined }
+        { curPanel === PANELS.QUESTION_PANEL && <Label as='p' color='blue' ribbon>{strings.question} {curQuestionIndex+1} / {QUESTIONS_COUNT}</Label> }
 
         {
           curPanel === PANELS.WELCOME_PANEL ?

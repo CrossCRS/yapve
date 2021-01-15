@@ -26,13 +26,15 @@ function ResultsPanel(props) {
     <Container textAlign='center' id='canvas-target'>
       <Header as='h1'>{strings.results}</Header>
 
-      {Object.keys(props.scores).map((axis, i) => (
-        <AxisBar
-          value={props.scores[axis].value}
-          maxValue={props.scores[axis].max_value}
-          axisData={politics.axes.filter(a => a.name === axis)[0]}
-        />
-      ))}
+      {
+        Object.keys(props.scores).map((axis, i) => (
+          <AxisBar
+            value={props.scores[axis].value}
+            maxValue={props.scores[axis].max_value}
+            axisData={politics.axes.filter(a => a.name === axis)[0]}
+          />
+        ))
+      }
 
       <PoweredByLabel float='left' margin='0' />
       <Header as='h5' style={{margin: 0, float: 'right'}} disabled>{config.name}</Header>
