@@ -4,6 +4,8 @@ import styles from './yapve.module.css';
 import config from './data/config.js';
 import strings from './data/strings.js';
 
+import logo from './logo.svg';
+
 import politics from './data/politics.js';
 import questions from './data/questions.js';
 
@@ -96,7 +98,9 @@ function YAPVE() {
 
   return (
     <div>
-      <Header as='h1' className={styles.header} content={config.name} textAlign='center' />
+      <Container>
+        <img src={logo} alt={config.name} className={styles.logo} />
+      </Container>
 
       <Container text>
         <Segment>
