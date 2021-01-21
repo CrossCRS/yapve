@@ -13,12 +13,21 @@
 
 .bar {
     border-right: 6px solid #ffffff !important;
-    border-radius: 0.3em !important;
+    border-radius: 0 !important;
     border-top-right-radius: 0 !important;
     border-bottom-right-radius: 0 !important;
 }
 
 .bar_background {
-    border-radius: 0.3em !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
     line-height: 1;
+    flex-grow: 1;
+}
+
+.axis {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 1em 0;
 }

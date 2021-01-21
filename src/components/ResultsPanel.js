@@ -23,22 +23,30 @@ function ResultsPanel(props) {
   }
 
   return (
-    <Container textAlign='center' id='canvas-target'>
-      <Header as='h1'>{strings.results}</Header>
+    <Container textAlign='center'>
+      <div id='canvas-target'>
+        <Header as='h1'>{strings.results}</Header>
 
-      {
-        Object.keys(props.scores).map((axis, i) => (
-          <AxisBar
-            value={props.scores[axis].value}
-            maxValue={props.scores[axis].max_value}
-            axisData={politics.axes.filter(a => a.name === axis)[0]}
-          />
-        ))
-      }
+        {
+          Object.keys(props.scores).map((axis, i) => (
+            <AxisBar
+              value={props.scores[axis].value}
+              maxValue={props.scores[axis].max_value}
+              axisData={politics.axes.filter(a => a.name === axis)[0]}
+            />
+          ))
+        }
 
-      <PoweredByLabel float='left' margin='0' />
-      <Header as='h5' style={{margin: 0, float: 'right'}} disabled>{config.name}</Header>
-      <Button onClick={exportToImage} data-html2canvas-ignore>{strings.export_to_image}</Button>
+        <PoweredByLabel float='left' margin='0' />
+        <Header as='h5' style={{margin: 0, float: 'right'}} disabled>{config.name}</Header>
+      </div>
+
+      <div style={{marginTop: '4em'}}>
+        <Button.Group widths='2'>
+          <Button primary onClick={exportToImage} data-html2canvas-ignore>{strings.export_to_image}</Button>
+          <Button onClick={() => window.location.reload()} data-html2canvas-ignore>{strings.restart}</Button>
+        </Button.Group>
+      </div>
     </Container>
   )
 }
