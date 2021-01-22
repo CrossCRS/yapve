@@ -124,7 +124,7 @@ function YAPVE() {
         }
         </Segment>
 
-        <PoweredByLabel />
+        <PoweredByLabel textAlign='center' />
       </Container>
     </div>
   );

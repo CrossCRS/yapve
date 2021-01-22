@@ -8,7 +8,8 @@ const strings = {
   question: 'Question',
 
   results: 'Results',
-  export_to_image: 'Export to image'
+  export_to_image: 'Export to image',
+  restart: 'Restart'
 };
 
 export default strings;
