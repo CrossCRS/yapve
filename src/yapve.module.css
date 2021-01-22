@@ -12,3 +12,9 @@
     margin-top: 1em;
     margin-bottom: 1em;
 }
+
+@media screen and (max-width: 992px) {
+    .logo {
+        width: 85%;
+    }
+}

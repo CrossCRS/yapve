@@ -7,7 +7,7 @@ function PoweredByLabel(props) {
     <Header
       as='h5'
       className={styles.poweredby}
-      textAlign={props.textAlign || 'center'}
+      textAlign={props.textAlign || undefined}
       style={{float: props.float || undefined, margin: props.margin || undefined}}
       disabled
     >
