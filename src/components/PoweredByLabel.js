@@ -8,7 +8,7 @@ function PoweredByLabel(props) {
       as='h5'
       className={styles.poweredby}
       textAlign={props.textAlign || undefined}
-      style={{float: props.float || undefined, margin: props.margin || undefined}}
+      style={{ float: props.float || undefined, margin: props.margin || undefined }}
       disabled
     >
       Powered by <a href='https://github.com/CrossCRS/yapve'>YAPVE</a>

@@ -7,7 +7,7 @@ function WelcomePanel(props) {
 
   return (
     <div>
-      <p dangerouslySetInnerHTML={{__html: description}} />
+      <p dangerouslySetInnerHTML={{ __html: description }} />
       <Button fluid primary size='big' onClick={props.onStart}>Start</Button>
     </div>
   )

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Header, Segment, Label } from 'semantic-ui-react';
+import { Container, Segment, Label } from 'semantic-ui-react';
 import styles from './yapve.module.css';
 import config from './data/config.js';
 import strings from './data/strings.js';
@@ -76,7 +76,7 @@ function YAPVE() {
     const scoreUpdate = [];
     questions[curQuestionIndex].effects.forEach((effect) => {
       updatedScores[effect.axis].value -= effect.value * multiplier;
-      scoreUpdate.push({axis: effect.axis, value: effect.value * multiplier});
+      scoreUpdate.push({ axis: effect.axis, value: effect.value * multiplier });
     })
     setScores(updatedScores);
     addToScoreHistory(scoreUpdate);

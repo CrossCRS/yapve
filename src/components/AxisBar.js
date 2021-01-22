@@ -12,10 +12,10 @@ function AxisBar(props) {
   const value_percent = (normalize(props.value, -props.maxValue, props.maxValue)*100).toFixed(1);
 
   return (
-    <div style={{display: 'flex', flexDirection: 'column'}}>
-      <div>
-        <Header as='h2' style={{float: 'left', margin: 0}}>{props.axisData.left}</Header>
-        <Header as='h2' style={{float: 'right', margin: 0}}>{props.axisData.right}</Header>
+    <div className={styles.axisbar}>
+      <div className={styles.labels}>
+        <Header as='h2' style={{ margin: 0 }}>{props.axisData.left}</Header>
+        <Header as='h2' style={{ margin: 0 }}>{props.axisData.right}</Header>
       </div>
       <div className={styles.axis}>
         { props.axisData.left_icon && <AxisBarIcon icon={props.axisData.left_icon} color={props.axisData.left_color} alt={props.axisData.left} /> }

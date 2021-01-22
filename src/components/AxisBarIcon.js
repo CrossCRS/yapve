@@ -4,10 +4,10 @@ import styles from './AxisBarIcon.module.css';
 function AxisBarIcon(props) {
   return (
     <img
-      className={styles['axis-icon']}
+      className={styles.axis_icon}
       src={process.env.PUBLIC_URL + '/img/icons/' + props.icon}
       alt={props.alt}
-      style={{borderColor: props.color}}
+      style={{ borderColor: props.color }}
     />
   )
 }

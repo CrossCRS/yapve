@@ -40,7 +40,7 @@ function ResultsPanel(props) {
 
         <div className={styles.labels}>
           <PoweredByLabel margin='0' />
-          <Header as='h5' style={{margin: 0}} disabled>{config.name}</Header>
+          <Header as='h5' style={{ margin: 0 }} disabled>{config.name}</Header>
         </div>
       </div>
 
