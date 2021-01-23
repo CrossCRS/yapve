@@ -9,7 +9,7 @@ const strings = {
 
   results: 'Results',
   export_to_image: 'Export to image',
-  restart: 'Restart'
+  restart: 'Restart',
 };
 
 export default strings;

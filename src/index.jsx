@@ -8,5 +8,5 @@ ReactDOM.render(
   <React.StrictMode>
     <YAPVE />
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById('root'),
 );

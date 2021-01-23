@@ -26,6 +26,7 @@
     border-radius: 0 !important;
     border-top-right-radius: 0 !important;
     border-bottom-right-radius: 0 !important;
+    max-width: 95%;
 }
 
 .bar_background {
