@@ -1,30 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Header } from 'semantic-ui-react';
-import styles from './PoweredByLabel.module.css';
 
-function PoweredByLabel({ textAlign, margin }) {
+function PoweredByLabel({ className }) {
   return (
-    <Header
-      as="h5"
-      className={styles.poweredby}
-      textAlign={textAlign}
-      style={{ margin }}
-      disabled
-    >
+    <h5 className={`text-gray-700 font-light text-sm ${className}`}>
       Powered by <a href="https://github.com/CrossCRS/yapve">YAPVE</a>
-    </Header>
+    </h5>
   );
 }
 
 PoweredByLabel.propTypes = {
-  textAlign: PropTypes.string,
-  margin: PropTypes.string,
+  className: PropTypes.string,
 };
 
 PoweredByLabel.defaultProps = {
-  textAlign: undefined,
-  margin: undefined,
+  className: '',
 };
 
 export default PoweredByLabel;

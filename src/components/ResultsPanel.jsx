@@ -1,22 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Button, Container, Header } from 'semantic-ui-react';
 import html2canvas from 'html2canvas';
 import ReImg from 'reimg';
 import AxisBar from './AxisBar';
 import politics from '../data/politics';
 import strings from '../data/strings';
 import config from '../data/config';
-import styles from './ResultsPanel.module.css';
 
 import PoweredByLabel from './PoweredByLabel';
+import Button from './core/Button';
 
 function ResultsPanel({ scores }) {
   const exportToImage = () => {
     const element = document.querySelector('#canvas-target');
 
     html2canvas(element, {
-      width: element.scrollWidth + 16, // Add small margin
+      width: element.scrollWidth, // Add small margin
       height: element.scrollHeight,
       logging: false,
     }).then((canvas) => {
@@ -25,9 +24,9 @@ function ResultsPanel({ scores }) {
   };
 
   return (
-    <Container textAlign="center">
+    <div className="flex flex-col">
       <div id="canvas-target">
-        <Header as="h1">{strings.results}</Header>
+        <h1 className="text-4xl text-center mb-6">{strings.results}</h1>
 
         {
           Object.keys(scores).map((axis) => (
@@ -40,17 +39,17 @@ function ResultsPanel({ scores }) {
           ))
         }
 
-        <div className={styles.labels}>
-          <PoweredByLabel margin="0" />
-          <Header as="h5" style={{ margin: 0 }} disabled>{config.name}</Header>
+        <div className="flex justify-between mb-6">
+          <PoweredByLabel />
+          <h5 className="text-gray-700 font-light text-sm" disabled>{config.name}</h5>
         </div>
       </div>
 
-      <Button.Group widths="2">
-        <Button primary onClick={exportToImage} data-html2canvas-ignore>{strings.export_to_image}</Button>
-        <Button onClick={() => window.location.reload()} data-html2canvas-ignore>{strings.restart}</Button>
-      </Button.Group>
-    </Container>
+      <div className="grid grid-cols-2 gap-2">
+        <Button onClick={exportToImage} data-html2canvas-ignore>{strings.export_to_image}</Button>
+        <Button color="gray-200" hoverColor="gray-300" ringColor="gray-200" className="text-gray-900" onClick={() => window.location.reload()} data-html2canvas-ignore>{strings.restart}</Button>
+      </div>
+    </div>
   );
 }
 

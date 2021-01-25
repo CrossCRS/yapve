@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-body {
-  font-family: 'Lato', sans-serif !important;
-}
-
-.button, .segment {
-  border-radius: 0 !important;
+@layer base {
+  a {
+    @apply font-medium;
+  }
 }

@@ -1,11 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './AxisBarIcon.module.css';
 
 function AxisBarIcon({ icon, alt, color }) {
   return (
     <img
-      className={styles.axis_icon}
+      className="w-16 border-4 rounded-sm"
       src={`${process.env.PUBLIC_URL}/img/icons/${icon}`}
       alt={alt}
       style={{ borderColor: color }}

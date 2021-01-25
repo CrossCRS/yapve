@@ -1,8 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Segment, Label } from 'semantic-ui-react';
-import styles from './yapve.module.css';
 import config from './data/config';
-import strings from './data/strings';
 
 import logo from './logo.svg';
 
@@ -114,20 +111,16 @@ function YAPVE() {
   };
 
   return (
-    <div>
-      <Container>
-        <img src={logo} alt={config.name} className={styles.logo} />
-      </Container>
+    <div className="min-h-screen bg-gray-100 pt-6">
+      <img src={logo} alt={config.name} className="mx-auto" />
 
-      <Container text>
-        <Segment>
-          { curPanel === PANELS.QUESTION_PANEL && <Label as="p" color="blue" ribbon>{strings.question} {curQuestionIndex + 1} / {QUESTIONS_COUNT}</Label> }
-
+      <div className="max-w-2xl mx-auto">
+        <div className="bg-white py-6 px-6 my-6 shadow-lg rounded-md">
           { renderPanel() }
-        </Segment>
+        </div>
 
-        <PoweredByLabel textAlign="center" />
-      </Container>
+        <PoweredByLabel className="text-center" />
+      </div>
     </div>
   );
 }
