@@ -47,7 +47,7 @@ function ResultsPanel({ scores }) {
 
       <div className="grid grid-cols-2 gap-2">
         <Button onClick={exportToImage} data-html2canvas-ignore>{strings.export_to_image}</Button>
-        <Button color="gray-200" hoverColor="gray-300" ringColor="gray-200" className="text-gray-900" onClick={() => window.location.reload()} data-html2canvas-ignore>{strings.restart}</Button>
+        <Button basic onClick={() => window.location.reload()} data-html2canvas-ignore>{strings.restart}</Button>
       </div>
     </div>
   );
