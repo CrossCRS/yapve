@@ -111,7 +111,7 @@ function YAPVE() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 pt-6">
+    <div className="min-h-screen bg-gray-100 pt-6 font-body">
       <img src={logo} alt={config.name} className="mx-auto" />
 
       <div className="max-w-2xl mx-auto">
