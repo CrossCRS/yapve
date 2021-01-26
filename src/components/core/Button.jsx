@@ -16,7 +16,7 @@ function Button({ className, color, onClick, disabled, basic, children, ...other
     'bg-red-500 hover:bg-red-600 focus:ring-red-200': !disabled && !basic && color === 'red',
     'bg-red-400 hover:bg-red-600 focus:ring-red-200': !disabled && !basic && color === 'lightred',
 
-    'bg-gray-100 hover:bg-gray-100 focus:ring-gray-200 text-gray-400': disabled,
+    'bg-gray-100 hover:bg-gray-100 focus:ring-gray-200 text-gray-400 cursor-default': disabled,
     'bg-gray-200 hover:bg-gray-300 focus:ring-gray-100 text-gray-900': !disabled && !color && basic,
     [`${className}`]: className,
   });
