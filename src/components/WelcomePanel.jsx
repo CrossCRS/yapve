@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Button } from 'semantic-ui-react';
 import config from '../data/config';
+
+import Button from './core/Button';
 
 function WelcomePanel({ questionsCount, onStart }) {
   const description = config.description.replace('%QUESTIONS_COUNT%', questionsCount);
@@ -9,7 +10,7 @@ function WelcomePanel({ questionsCount, onStart }) {
   return (
     <div>
       <p dangerouslySetInnerHTML={{ __html: description }} />
-      <Button fluid primary size="big" onClick={onStart}>Start</Button>
+      <Button className="min-w-full mt-8" onClick={onStart}>Start</Button>
     </div>
   );
 }

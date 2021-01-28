@@ -1,7 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Header } from 'semantic-ui-react';
-import styles from './AxisBar.module.css';
 
 import AxisBarIcon from './AxisBarIcon';
 
@@ -10,18 +8,22 @@ function AxisBar({ value, maxValue, axisData }) {
 
   const valuePercent = (normalize(value, -maxValue, maxValue) * 100).toFixed(1);
 
+  const leftWidth = valuePercent < 10 ? 10 : valuePercent;
+  const rightWidth = (100 - valuePercent) < 10 ? 10 : 100 - valuePercent;
+
   return (
-    <div className={styles.axisbar}>
-      <div className={styles.labels}>
-        <Header as="h2" style={{ margin: 0 }}>{axisData.left}</Header>
-        <Header as="h2" style={{ margin: 0 }}>{axisData.right}</Header>
+    <div className="mb-6">
+      <div className="flex justify-between">
+        <h2 className="text-xl font-medium">{axisData.left}</h2>
+        <h2 className="text-xl font-medium">{axisData.right}</h2>
       </div>
-      <div className={styles.axis}>
+      <div className="flex items-center">
         { axisData.left_icon && <AxisBarIcon icon={axisData.left_icon} color={axisData.left_color} alt={axisData.left} /> }
-        <div className={`${styles.bar_background} ui large progress`} style={{ backgroundColor: axisData.right_color }} data-percent={valuePercent}>
-          <div className={`${styles.bar} bar`} style={{ width: `${valuePercent}%`, backgroundColor: axisData.left_color }} />
-          <div className={`${styles.value} ${styles.value_left}`}>{`${valuePercent}%`}</div>
-          <div className={`${styles.value} ${styles.value_right}`}>{`${(100 - valuePercent).toFixed(1)}%`}</div>
+        <div className="relative h-10 rounded-sm rounded-l-none mr-1 flex items-center justify-start" style={{ width: `${leftWidth}%`, backgroundColor: axisData.left_color }}>
+          <div className="mx-1 font-medium">{`${valuePercent}%`}</div>
+        </div>
+        <div className="relative h-10 rounded-sm rounded-r-none ml-1 flex items-center justify-end" style={{ width: `${rightWidth}%`, backgroundColor: axisData.right_color }}>
+          <div className="mx-1 font-medium">{`${(100 - valuePercent).toFixed(1)}%`}</div>
         </div>
         { axisData.right_icon && <AxisBarIcon icon={axisData.right_icon} color={axisData.right_color} alt={axisData.right} /> }
       </div>
