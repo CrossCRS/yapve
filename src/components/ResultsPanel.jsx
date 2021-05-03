@@ -10,13 +10,20 @@ import config from '../data/config';
 import PoweredByLabel from './PoweredByLabel';
 import Button from './core/Button';
 
+const TARGET_WIDTH = 800;
+
 function ResultsPanel({ scores }) {
   const exportToImage = () => {
     const element = document.querySelector('#canvas-target');
 
+    window.scrollTo(0, 0); // Scroll to 0,0 to avoid most clipping issues
+
     html2canvas(element, {
-      width: element.scrollWidth, // Add small margin
+      scrollX: -window.scrollX, // Workaround for html2canvas scroll bug
+      scrollY: -window.scrollY,
+      width: element.scrollWidth + 16, // Add small margin to fix right side clipping issue on desktop (doesn't seem to be present on mobile?)
       height: element.scrollHeight,
+      scale: TARGET_WIDTH / (element.scrollWidth + 16),
       logging: false,
     }).then((canvas) => {
       ReImg.ReImg.fromCanvas(canvas).downloadPng();
