@@ -1,6 +1,6 @@
 {
   "name": "yapve",
-  "version": "0.1.0",
+  "version": "0.2.1",
   "homepage": "https://crosscrs.github.io/yapve",
   "private": true,
   "dependencies": {
